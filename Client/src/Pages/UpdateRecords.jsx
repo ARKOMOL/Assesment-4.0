@@ -6,7 +6,8 @@ const UpdateRecords = () => {
     const {id} = useParams();
     const [record, setRecord] = useState({});
     useEffect( () =>{
-        const url = `http://localhost:5000/records/${id}`;
+        // const url = `http://localhost:5000/records/${id}`;
+        const url = `https://still-beyond-69108.herokuapp.com/records/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setRecord(data));
@@ -21,7 +22,8 @@ const UpdateRecords = () => {
         const updatedRecords = {name,imgOne,imgTwo };
 
         // send data to the server
-        const url = `http://localhost:5000/records/${id}`;
+        // const url = `http://localhost:5000/records/${id}`;
+        const url = `https://still-beyond-69108.herokuapp.com/records/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

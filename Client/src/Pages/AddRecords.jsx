@@ -7,7 +7,7 @@ const AddRecords = () => {
     
     const onSubmit = data => {
 console.log(data);
-  const url = `http://localhost:5000/add-records`
+  const url = `https://still-beyond-69108.herokuapp.com/add-records`
  
   console.log(url);
   fetch(url, {

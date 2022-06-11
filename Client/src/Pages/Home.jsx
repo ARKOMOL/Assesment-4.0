@@ -7,7 +7,8 @@ const Home = () => {
     const [records,setRecords] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
-      fetch('http://localhost:5000/records')
+    //   fetch('http://localhost:5000/records')
+      fetch('https://still-beyond-69108.herokuapp.com/records')
       .then(res =>res.json())
       .then(data =>{
           console.log(data);
@@ -19,7 +20,8 @@ const Home = () => {
         const handleToDelete = id =>{
             const confirm = window.confirm ('Want to delete this item?')
            if (confirm) {
-             const url = `http://localhost:5000/records/${id}`;
+            //  const url = `http://localhost:5000/records/${id}`;
+             const url = `https://still-beyond-69108.herokuapp.com/records/${id}`;
            
            
             fetch(url,{
