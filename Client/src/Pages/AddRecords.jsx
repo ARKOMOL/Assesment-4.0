@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { toast, ToastContainer } from 'react-toastify';
 
 const AddRecords = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -18,8 +19,10 @@ console.log(data);
   })
   .then(res =>res.json())
   .then(r => {
+  toast.success('success')
     console.log(r)
-     reset()
+    reset()
+    
   })
 
 
@@ -53,6 +56,7 @@ console.log(data);
 
       </div>
       </div>
+    
       </div>
     );
 };
