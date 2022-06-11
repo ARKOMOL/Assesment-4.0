@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Records = ({record}) => {
+const Records = ({record,handleToDelete}) => {
     console.log(record)
     const {name,img1,img2} = record;
     return (
@@ -13,7 +13,7 @@ const Records = ({record}) => {
             <img src={img1} alt="" />
             <h2 class="card-title">{name}</h2>
             <img src={img2} alt="" />
-            <button className='btn hover:bg-red-700 '>Delete</button>
+            <button onClick={()=>handleToDelete(record._id)} className='btn hover:bg-red-700 '>Delete</button>
          
         </div>
     </div>

@@ -12,6 +12,24 @@ const Home = () => {
           setRecords(data)
       })
         },[])
+
+
+        const handleToDelete = id =>{
+            const confirm = window.confirm ('Want to delete this item?')
+           if (confirm) {
+             const url = `http://localhost:5000/records/${id}`;
+           
+           
+            fetch(url,{
+                method:'DELETE'
+            })
+            .then(res =>res.json())
+            .then(data =>{
+                console.log(data);
+                const restItems = records.filter(record => record._id !== id);
+                setRecords(restItems);
+            })
+           }}
     
     
     return (
@@ -22,7 +40,7 @@ const Home = () => {
 
             <div class="Lg:mx-32 md:mx-32 container gap-5 card bg-base-100 shadow-xl  grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center mt-5  l">
                 {
-                    records.map(record=><Records key={record._id} record={record}></Records>)
+                    records.map(record=><Records key={record._id} record={record} handleToDelete={handleToDelete} ></Records>)
                 }
             
             </div>
