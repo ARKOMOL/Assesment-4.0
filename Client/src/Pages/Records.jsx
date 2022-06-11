@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Records = ({record,handleToDelete,updateRecords}) => {
-    console.log(record)
+    // console.log(record)
     const {name,imgOne,imgTwo} = record;
     return (
         <div>
