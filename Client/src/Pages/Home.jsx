@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../Shared/Navbar';
 import Records from './Records';
 
 const Home = () => {
     const [records,setRecords] = useState([])
+    const navigate = useNavigate()
     useEffect(() => {
       fetch('http://localhost:5000/records')
       .then(res =>res.json())
@@ -30,6 +32,10 @@ const Home = () => {
                 setRecords(restItems);
             })
            }}
+           const updateRecords = id =>{
+            navigate(`/records/${id}`)
+            
+           }
     
     
     return (
@@ -40,7 +46,7 @@ const Home = () => {
 
             <div class="Lg:mx-32 md:mx-32 container gap-5 card bg-base-100 shadow-xl  grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 justify-items-center mt-5  l">
                 {
-                    records.map(record=><Records key={record._id} record={record} handleToDelete={handleToDelete} ></Records>)
+                    records.map(record=><Records key={record._id} record={record} handleToDelete={handleToDelete} updateRecords={updateRecords} ></Records>)
                 }
             
             </div>

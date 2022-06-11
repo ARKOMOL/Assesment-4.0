@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Records = ({record,handleToDelete}) => {
+const Records = ({record,handleToDelete,updateRecords}) => {
     console.log(record)
-    const {name,img1,img2} = record;
+    const {name,imgOne,imgTwo} = record;
     return (
         <div>
        
@@ -10,10 +10,11 @@ const Records = ({record,handleToDelete}) => {
         <div class="w-24 rounded-full">
     <img src="https://api.lorem.space/image/face?hash=0" className='rounded-full w-25 h-25' alt='' />
   </div>
-            <img src={img1} alt="" />
+            <img src={imgOne} alt="" />
             <h2 class="card-title">{name}</h2>
-            <img src={img2} alt="" />
+            <img src={imgTwo} alt="" />
             <button onClick={()=>handleToDelete(record._id)} className='btn hover:bg-red-700 '>Delete</button>
+            <button onClick={()=>updateRecords(record._id)} className='btn hover:bg-red-700 '>Update</button>
          
         </div>
     </div>

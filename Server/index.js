@@ -46,6 +46,24 @@ async function run(){
     
         })
 
+         /*=============update record==================*/
+    app.put('/records/:id', async (req,res)=>{
+        const id = req.params.id;
+        const updateRecords= req.body;
+        // console.log(updateRecords);
+        const filter ={_id: ObjectId(id)};
+        const options = {upsert: true};
+        const updatedoc ={
+            $set:{
+                name: updateRecords.name,
+                img1: updateRecords.imgOne,
+                img2: updateRecords.imgTwo
+            }
+        };
+      const result = await recordsCollection.updateOne(filter,updatedoc,options)
+        res.send(result);
+    })
+
            /*===================Delete======================*/
 
     app.delete('/records/:id', async (req,res)=>{

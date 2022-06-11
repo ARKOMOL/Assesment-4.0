@@ -43,10 +43,10 @@ console.log(data);
         <input placeholder='Name' class="input w-full input-bordered"  {...register("name", { required: true })} />
         <p> {errors.name && <span>This field is required</span>}</p>
         
-        <input placeholder='Imgage-1'  class="input mt-5 w-full input-bordered" {...register("img1", { required: true })} />
-       <p> {errors.img1 && <span>This field is required</span>}</p>
-       <input placeholder='Imgage-2' class="input mt-5 w-full input-bordered" {...register("img2", { required: true })} />
-       <p> {errors.img1 && <span>This field is required</span>}</p>
+        <input placeholder='Imgage-1'  class="input mt-5 w-full input-bordered" {...register("imgOne", { required: true })} />
+       <p> {errors.imgOne && <span>This field is required</span>}</p>
+       <input placeholder='Imgage-2' class="input mt-5 w-full input-bordered" {...register("imgTwo", { required: true })} />
+       <p> {errors.imgTwo && <span>This field is required</span>}</p>
         <div class="form-control mt-6">
 
         <input className='btn btn-primary hover:btn-ghost' type="submit" />

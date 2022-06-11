@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import AddRecords from './Pages/AddRecords';
 import Navbar from './Shared/Navbar';
 import 'react-toastify/dist/ReactToastify.css';
+import UpdateRecords from './Pages/UpdateRecords';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
      <Routes>
        <Route path='/' element={<Home/>}/>
        <Route path='/add-items' element={<AddRecords/>}/>
-       <Route path='/' element={<Home/>}/>
+       <Route path='/records/:id' element={<UpdateRecords/>}/>
      </Routes>
      <ToastContainer />
     </div>
